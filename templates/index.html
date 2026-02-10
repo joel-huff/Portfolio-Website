@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class = "header">
+        <div class="profile">
+            <h1><a href= "https://www.trueachievements.com/gamer/Bort+Sampson-555">Joel Huff</a></h1>
+            <img src="../static/images/portfolio-image.png" alt="">
+        </div>
+
+        <nav>
+            <ul>
+                <li class="list" id="open_about">about</li>
+                <li class="list" id="open_social">social</li>
+                <li class="list" id="open_resume">resume</li>
+                <li class="list" id="open_contact">contact</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div id="divOne"><a href = "about.html"></a>Project One</div>
+        <div id="divtwo">Project Two</div>
+        <div id="divthree">Project Three</div>
+        <div id="divFour">Project Four</div>
+        <div id="divfive">Project Five</div>
+    </main>
+    <div class="modal-container" id = "about_modal_container">
+        <div class="modal">
+            <h1>Joel D. Huff</h1>
+            <img id="portfolio-img" src="../static/images/portfolio-image.png" alt="">
+            <p>My name is Joel, and I recently graduated with a Bachelor's of Science in Computer Science. I am based in the San Francisco Bay Area. After years of working
+                in recruitment (political and healthcare), I decided my career trajectory was not quite where I was hoping to be. My desire to create something more tangible (in an electronics sense),
+                overrode my passion of making cold calls and being hung up on. One morning, I decided spoke to myself "Why on Earth am I doing this?". I didn't have a good response, so I decided to return to school. During this time, I was promoted at work all while trying to learn a new skill, complete coursework, and fight off a caffeine addiction brought on by late nights at a glaringly bright computer screen.
+
+                Now that I graduated, I am looking into full-stack and game-dev roles, with a focus on ML and LLM implementation.
+            </p>
+            <button id = "about_close">Close</button>
+        </div>
+    </div>
+
+    <div class="modal-container" id= "social_modal_container">
+        <div class="modal">
+            <h1>Joel D. Huff</h1>
+
+            <button id = "social_close">Close</button>
+        </div>
+    </div>
+    <div class="modal-container" id= "resume_modal_container">
+        <div class="modal">
+            <h1>Joel D. Huff</h1>
+
+            <button id = "resume_close">Close</button>
+        </div>
+    </div>
+    <div class="modal-container" id= "contact_modal_container">
+        <div class="modal">
+            <h1>Joel D. Huff</h1>
+            <form>
+                <div>
+                    <label>Name
+                        <input type="text" placeholder="first/last">
+                    </label>
+                </div>
+                <div>
+                    <label>Company
+                        <input type="text" placeholder="if applicable">
+                    </label>
+                </div>
+                <div>
+                    <label>Email
+                        <input type="email">
+                    </label>
+                </div>
+                <div>
+                    <label>Phone Number
+                        <input type="tel" placeholder="(123)456-7891">
+                    </label>
+                </div>
+                <input type="submit">
+            </form>
+            <button id = "contact_close">Close</button>
+        </div>
+    </div>
+    <script src="/static/script.js" charset="UTF-8"></script>
+</body>
+</html>

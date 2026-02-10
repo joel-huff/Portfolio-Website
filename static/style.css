@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com');
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(#9c9c9c 10%, #242424 90%);
+    font-family: "Didact Gothic", sans-serif;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 55% 20%;
+    justify-content: center;
+
+}
+.header {
+    grid-row: 1;
+    grid-column: 2;
+    height: 2vh;
+    margin-top: 6rem;
+    margin-bottom: 0;
+    margin-right: 10rem;
+    color: white;
+    align-items: start;
+}
+.profile{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5rem;
+    gap: 1rem;
+}
+.profile img{
+    height: 30px;
+    width: 30px;
+}
+.profile h1 {
+    font-size: 1rem;
+}
+li{
+    list-style: none;
+    font-size: 2.5rem;
+    text-decoration: none;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.list {
+    color:#a7a7a7;
+    text-decoration: none;
+}
+
+.list:hover {
+    color:white;
+    cursor: pointer;
+}
+
+main div {
+    background-color: #0E7A0D;
+    color: white;
+}
+#divtwo{
+    grid-row: span 2;
+}
+/*#open_about {*/
+/*    color:#a7a7a7;*/
+/*    text-decoration: none;*/
+/*}*/
+/*#open_about:hover{*/
+/*    color:white;*/
+/*    cursor: pointer;*/
+/*}*/
+
+.container {
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0;
+    padding: 0;
+    height: 40vh;
+    width: 50vw;
+    display:grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(#242424 0%, #9c9c9c 75%, #242424 90%);
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 40vh;
+    width: 45vw;
+    display:grid;
+    color: white;
+}
+
+.modal-container {
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.modal {
+    background-color: white;
+    width: 60%;
+    height: 50%;
+    border-left: 80px solid #9c9c9c;
+    border-right: 80px solid #9c9c9c;
+    padding: 100px;
+    box-shadow: 0 2px 4px  rgba(0, 0, 0, 0.85);
+}
+
+.modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+#portfolio-img {
+    width: 25rem;
+    height: 25rem;
+}
