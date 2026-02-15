@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com');
 
+
+
 body{
     height: 100vh;
     width: 100vw;
     background: radial-gradient(#9c9c9c 10%, #242424 90%);
     font-family: "Didact Gothic", sans-serif;
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 25% 55% 20%;
-    justify-content: center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
-.header {
+header {
     grid-row: 1;
     grid-column: 2;
-    height: 2vh;
+    height: auto;
+    width: 50vw;
     margin-top: 6rem;
-    margin-bottom: 0;
-    margin-right: 10rem;
+    margin-bottom: 3rem;
     color: white;
     align-items: start;
 }
@@ -41,8 +43,8 @@ li{
 }
 ul {
     display: flex;
-    justify-content: space-between;
-
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .list {
@@ -62,14 +64,6 @@ main div {
 #divtwo{
     grid-row: span 2;
 }
-/*#open_about {*/
-/*    color:#a7a7a7;*/
-/*    text-decoration: none;*/
-/*}*/
-/*#open_about:hover{*/
-/*    color:white;*/
-/*    cursor: pointer;*/
-/*}*/
 
 .container {
     grid-row: 2;
@@ -80,26 +74,25 @@ main div {
     width: 50vw;
     display:grid;
     gap: 0.5rem;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 50% 50%;
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: linear-gradient(#242424 0%, #9c9c9c 75%, #242424 90%);
-    grid-row: 2;
-    grid-column: 2;
-    margin: 0;
-    padding-top: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    height: 40vh;
-    width: 45vw;
-    display:grid;
-    color: white;
-}
+/*.about {*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    background: linear-gradient(#242424 0%, #9c9c9c 75%, #242424 90%);*/
+/*    grid-row: 2;*/
+/*    grid-column: 2;*/
+/*    margin: 0;*/
+/*    padding-top: 1rem;*/
+/*    padding-left: 2rem;*/
+/*    padding-right: 2rem;*/
+/*    height: 40vh;*/
+/*    width: 45vw;*/
+/*    display:grid;*/
+/*    color: white;*/
+/*}*/
 
 .modal-container {
     position:fixed;
@@ -134,4 +127,13 @@ main div {
 #portfolio-img {
     width: 25rem;
     height: 25rem;
+}
+
+.contact_content{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.contact_content h1{
+    grid-column: 1;
+    column-span: 2;
 }

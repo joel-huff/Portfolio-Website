@@ -6,10 +6,11 @@
     <title>Home</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-    <header class = "header">
+    <header>
         <div class="profile">
-            <h1><a href= "https://www.trueachievements.com/gamer/Bort+Sampson-555">Joel Huff</a></h1>
+            <h1><a class="list" href= "https://www.trueachievements.com/gamer/Bort+Sampson-555">Joel Huff</a></h1>
             <img src="../static/images/portfolio-image.png" alt="">
         </div>
 
@@ -59,31 +60,41 @@
     </div>
     <div class="modal-container" id= "contact_modal_container">
         <div class="modal">
-            <h1>Joel D. Huff</h1>
-            <form>
-                <div>
-                    <label>Name
-                        <input type="text" placeholder="first/last">
-                    </label>
-                </div>
-                <div>
-                    <label>Company
-                        <input type="text" placeholder="if applicable">
-                    </label>
-                </div>
-                <div>
-                    <label>Email
-                        <input type="email">
-                    </label>
-                </div>
-                <div>
-                    <label>Phone Number
-                        <input type="tel" placeholder="(123)456-7891">
-                    </label>
-                </div>
-                <input type="submit">
-            </form>
-            <button id = "contact_close">Close</button>
+            <div id="contact_content_left">
+                <h1>Joel D. Huff</h1>
+                <form id="form" action="/contact" method="post">
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="cname">Company: </label>
+                        <input type="text" id="cname" name="cname">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="pnumber">Phone Number</label>
+                        <input type="tel" id="pnumber" name="pnumber">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="message">Message: </label>
+                        <textarea name="message" id="message" required></textarea>
+                    </div>
+                    <br>
+                    <input type="submit">
+                </form>
+                <button id = "contact_close">Close</button>
+            </div>
+            <div id="contact_content_right">
+                <p>Louie louie louie</p>
+            </div>
         </div>
     </div>
     <script src="/static/script.js" charset="UTF-8"></script>

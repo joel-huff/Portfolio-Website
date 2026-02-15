@@ -29,6 +29,7 @@ openSocial.addEventListener("click", () => {
 })
 social_close.addEventListener("click", () => {
     social_modal_container.classList.remove("show");
+
 })
 
 /*Open and closes resume */
