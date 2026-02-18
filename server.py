@@ -3,6 +3,9 @@ import smtplib
 import os
 from dotenv import find_dotenv, load_dotenv
 from email.message import EmailMessage
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 
@@ -46,11 +49,13 @@ def contact():
         smtp.starttls()
         smtp.login(user_name, pswd)
         smtp.sendmail(msg['From'], msg['To'], msg.as_string())
-        print("Email sent!")
+        print("Email sent")
     if not name or not email or not message:
         error_message = "Name, email, and a message is required to send an inquiry."
         return
-    return render_template("contact.html", name=name, cname=cname, email=email, pnumber=pnumber, message=message)
+    return render_template("index.html", name=name, cname=cname, email=email, pnumber=pnumber, message=message)
+#create secret key
+
 
 if __name__ == '__main__':
     app.run(debug=True)
