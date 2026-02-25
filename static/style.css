@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
-
-
+*{
+    font-family: "Didact Gothic", sans-serif;
+}
 body{
     height: 100vh;
     width: 100vw;
-    background: radial-gradient(#9c9c9c 10%, #242424 90%);
-    font-family: "Didact Gothic", sans-serif;
-    font-size: 18px;
+    background: radial-gradient(#9c9c9c 15%, #242424 85%) no-repeat;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,6 +33,13 @@ header {
     height: 30px;
     width: 30px;
 }
+a {
+    text-decoration: none;
+}
+/*a:visited {*/
+/*    color: #0E7A0D;*/
+/*}*/
+
 .profile h1 {
     font-size: 1rem;
 }
@@ -95,36 +102,79 @@ main div {
     pointer-events: none;
     transition: opacity 0.5s ease;
 }
+.modal_contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#contact_content_left, #contact_content_right{
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
 
 .modal {
-    background-color: white;
+    border-radius: 15px;
     width: 30%;
-    height: 45%;
-    border-left: 5rem solid #9c9c9c;
-    border-right: 5rem solid #9c9c9c;
-    padding: 2rem;
+    height: 50%;
+    background: #9D9FA2;
+    overflow-y: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    display:grid;
+    grid-template-columns: 5% 90% 5%;
+    -ms-overflow-style: none;
+    scrollbar-width:none;
+}
+#contact_display {
+    width: 30%;
+    height: 30%;
+}
+.modal::-webkit-scrollbar{
+    display:none;
 }
 
 .modal-container.show {
     pointer-events: auto;
     opacity: 1;
+
 }
 
 #portfolio-img {
-    width: 25rem;
-    height: 25rem;
+    width: 10rem;
+    height: 10rem;
+    float: right;
+    clip-path: circle(50%);
 }
-#about_modal{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+
+.modal_structure{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    grid-column: 2;
 }
-.contact_content{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+.close_btn_style{
+    margin-right: 1rem;
+    justify-self: end;
+    border-radius: 50%;
+    background-color: #d13438;
+    color: #9a1a1f;
 }
-/*#contact_content h1{*/
-/*    grid-column: 1;*/
-/*    column-span: 2;*/
-/*}*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}

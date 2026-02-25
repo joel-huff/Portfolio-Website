@@ -24,67 +24,92 @@
         </nav>
     </header>
     <main class="container">
-        <div id="divOne"><a href = "google.com">Joel's Game Store 🎮</a></div>
-        <div id="divtwo">Project Two</div>
-        <div id="divthree">Project Three</div>
-        <div id="divFour">Project Four</div>
+        <div id="divOne"><a href = "google.com">Joel's Games 🎮</a></div>
+        <div id="divtwo"><a href="filler.com">First Player Games</a></div>
+        <div id="open_portfolio">Portfolio Website</div>
+        <div id="divFour">AI Project</div>
         <div id="divfive">Project Five</div>
     </main>
     <div class="modal-container" id = "about_modal_container">
-        <div class="modal">
-            <div id="about_modal">
-                <div>
-                    <h1>about me</h1>
-                    <h2>I am an aspiring Full-Stack Software Engineer based in the San Francisco Bay Area</h2>
-                    <p>I am an aspiring Full-Stack Developer</p>
-                </div>
-                <div>
-                    <img id="portfolio-img" src="../static/images/portfolio-image.png" alt="">
-                    <button id = "about_close">Close</button>
-                </div>
+        <div class="modal" id="about_display">
+
+            <div class="modal_structure">
+                <img id="portfolio-img" src="../static/images/portfolio-image.png" alt="">
+                <h1>about me</h1>
+                <p>My interest in developing technology initially started with editing HTML and CSS into my MySpace page, and
+                    it expanded while in a high school robotics class where we programmed RaspberryPi Battle Bots. After a few years detour
+                    working and managing in healthcare recruiting, I realized my previous tinkering is really my passion.</p>
+                <p>January '25, I graduated with a BS in Computer Science after two years of balancing school and work.
+                    I am excited to assist a team in providing a great experience that focuses on usability, art, and innovation!</p>
+
+                <label>
+                    <button class="close_btn_style" id = "about_close">B</button>
+                    back
+                </label>
             </div>
+
         </div>
     </div>
 
     <div class="modal-container" id= "contact_modal_container">
-        <div class="modal">
-            <div id="contact_content">
-                <h1>Joel D. Huff</h1>
-                <form id="form" action="/contact" method="post">
-                    <div class="form-group">
-                        <label for="name">Name: </label>
-                        <input type="text" id="name" name="name" required>
+        <div class="modal" id="contact_display">
+
+            <div class="modal_structure">
+                <div class="modal_contact">
+
+                    <div id="contact_content_left">
+                        <h2>General Inquiry</h2>
+                        <form action="/contact" method="POST">
+                            {{ form.hidden_tag() }}
+                            {{ form.name(size=25) }} <br>
+                            {{ form.email(size=25) }} <br>
+                            {{ form.message() }} <br>
+                            {{ form.submit() }}
+                        </form>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="cname">Company: </label>
-                        <input type="text" id="cname" name="cname">
+                    <div id="contact_content_right">
+                        <h2>Text or Call!</h2>
+                        <p>(510) 629-9341</p>
+                        <h2>Email!</h2>
+                        <p>joel.huff.sw@gmail.com</p>
+                        <label>
+                            <button class="close_btn_style" id = "contact_close">B</button>
+                            back
+                        </label>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" name="email" required>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="pnumber">Phone Number</label>
-                        <input type="tel" id="pnumber" name="pnumber">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="message">Message: </label>
-                        <textarea name="message" id="message" required></textarea>
-                    </div>
-                    <br>
-                    <input type="submit">
-                </form>
-                <button id = "contact_close">Close</button>
+                </div>
+
+
             </div>
-            <div id="contact_content_right">
-                <p>Louie louie louie</p>
+        </div>
+    </div>
+
+    <div class="modal-container" id = "portfolio_modal_container">
+        <div class="modal" id="portfolio_display">
+
+            <div class="modal_structure">
+                <h1>Portfolio Site</h1>
+                <h2>Front-End</h2>
+                <p>I wanted to design something that felt familiar and interactive. After a number of ideas, I landed on
+                    mimicking the Xbox 360 dashboard's tile style GUI due to its a simple way to showcase games and ads with
+                    the tiles images. The modals were inspired by the guide when pressing the Xbox button. Interactivity and
+                    design were created with HTML, CSS & JavaScript.
+                </p>
+                <h2>Technologies</h2>
+                <p>While building the website, I utilized Flask for the server and routing, Jinja to create templates for the modals,
+                WTForms, email.message & google's gmail api for email inquiry</p>
+                <a href="https://github.com/joel-huff/html_flask">github</a>
+                <label>
+                    <button class="close_btn_style" id = "portfolio_close">B</button>
+                    back
+                </label>
             </div>
+
         </div>
     </div>
     <script src="/static/script.js" charset="UTF-8"></script>
 </body>
+
+<footer>
+</footer>
 </html>

@@ -6,6 +6,10 @@ const openContact = document.getElementById("open_contact");
 const contact_modal_container = document.getElementById("contact_modal_container");
 const contact_close = document.getElementById("contact_close");
 
+const openPortfolio = document.getElementById("open_portfolio");
+const portfolio_modal_container = document.getElementById("portfolio_modal_container");
+const portfolio_close = document.getElementById("portfolio_close");
+
 
 /*Open and closes about section*/
 openAbout.addEventListener("click", () => {
@@ -21,4 +25,12 @@ openContact.addEventListener("click", () => {
 })
 contact_close.addEventListener("click", () => {
     contact_modal_container.classList.remove("show");
+})
+
+/*Open and closes contact */
+openPortfolio.addEventListener("click", () => {
+    portfolio_modal_container.classList.add("show");
+})
+portfolio_close.addEventListener("click", () => {
+    portfolio_modal_container.classList.remove("show");
 })
