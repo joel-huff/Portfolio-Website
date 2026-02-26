@@ -15,8 +15,6 @@ body{
     margin: 0;
 }
 header {
-    grid-row: 1;
-    grid-column: 2;
     height: auto;
     width: 50vw;
     margin-top: 5rem;
@@ -27,8 +25,8 @@ header {
 }
 .profile{
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 5rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
     gap: 1rem;
 }
 .profile img{
@@ -211,6 +209,12 @@ main div {
     .top_menu{
         display: none;
     }
+    #dropdown {
+        display: flex;
+    }
+    .profile{
+        justify-content: space-between;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -240,6 +244,12 @@ main div {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+    #dropdown {
+        display: none;
+    }
+    .profile{
+        justify-content: flex-end;
     }
 }
 }
