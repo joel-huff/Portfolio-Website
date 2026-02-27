@@ -10,6 +10,9 @@ const openPortfolio = document.getElementById("open_portfolio");
 const portfolio_modal_container = document.getElementById("portfolio_modal_container");
 const portfolio_close = document.getElementById("portfolio_close");
 
+const openSidebar = document.getElementById("sidebar_button");
+const sidebar_display = document.getElementById("sidebar_menu");
+
 
 /*Open and closes about section*/
 openAbout.addEventListener("click", () => {
@@ -33,4 +36,11 @@ openPortfolio.addEventListener("click", () => {
 })
 portfolio_close.addEventListener("click", () => {
     portfolio_modal_container.classList.remove("show");
+})
+
+// Opens the sidebar
+
+openSidebar.addEventListener("click", () => {
+    sidebar_display.style.display = "flex"
+
 })
