@@ -197,7 +197,7 @@ li a {
     cursor: pointer;
 }
 
-#link-back{
+.link-back{
     display: flex;
     flex-direction: row;
     gap: 10rem;
