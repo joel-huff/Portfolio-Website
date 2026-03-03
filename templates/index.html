@@ -33,7 +33,7 @@
     </header>
 
     <main class="container">
-        <div id="divOne" class="open_project">
+        <div id="open_game" class="open_project">
             <img class="web-icon" src="/static/images/controller.svg" alt="">
             <p>Joel's Games</p>
         </div>
@@ -111,14 +111,22 @@
                     <h1>Joel's Games</h1>
                 </header>
                 <main>
-                    <h2>Front-End</h2>
-                    <p>I wanted to design something that felt familiar and interactive. After a number of ideas, I landed on
-                        mimicking the Xbox 360 dashboard's tile style GUI due to its a simple usability. The modals were inspired
-                        by the guide when pressing the Xbox button. The front-end design was created with HTML, CSS & JavaScript.
+                    <h2>Overview</h2>
+                    <p>The front end of this is designed to look retro and simple, with nothing but a search bar which
+                        pulls games from a csv. The search bar will only autofill items from the csv, and lead into a
+                        second window which pulls 5 games that will be recommended to the users and 5 games that would
+                        least recommend the users in the event they preferred something fresh. This is to increase
+                        discoverability of games, as most gamers cycle through a smaller number of games today.
                     </p>
-                    <h2>Technologies</h2>
-                    <p>While building the website, I utilized Flask for the server and routing, Jinja,
-                    WTForms, email.message & google's gmail api for email inquiry for the back-end</p>
+                    <h2>Implementation</h2>
+                    <p>The front-end for this project was created with the Python + Machine Learning friendly, Tkinter.
+                    The initial steps were to clean the CSV data from kaggle to first utilize seaborn and matplotlib, to
+                        identify potential missing values and bias. Once identified, PANDAS was utilized to remove missing
+                        data and data columns that wouldn't be utilized in comparison.
+                    </p>
+                    <p>After the data was cleaned, I utilized sklearns CounterVectorizer to convert the data into a
+                    numerical representation, then used a cosine similarity score to compare these numbers. The future of
+                    the app will utilize webscraping, to find stores for to purchase the game from.</p>
                 </main>
                 <div class="link-back">
                     <a href="https://github.com/joel-huff/JoelsGameStore">github</a>
@@ -139,7 +147,7 @@
                     <h1>Portfolio Site</h1>
                 </header>
                 <main>
-                    <h2>Front-End</h2>
+                    <h2>Overview</h2>
                     <p>I wanted to design something that felt familiar and interactive. After a number of ideas, I landed on
                         mimicking the Xbox 360 dashboard's tile style GUI due to its a simple usability. The modals were inspired
                         by the guide when pressing the Xbox button. The front-end design was created with HTML, CSS & JavaScript.

@@ -8,6 +8,10 @@ const open_contact_sidebar = document.getElementById("open_contact_sidebar")
 const contact_modal_container = document.getElementById("contact_modal_container");
 const contact_close = document.getElementById("contact_close");
 
+const openGame = document.getElementById("open_game");
+const game_modal_container = document.getElementById("games_modal_container");
+const game_close = document.getElementById("game_close");
+
 const openPortfolio = document.getElementById("open_portfolio");
 const portfolio_modal_container = document.getElementById("portfolio_modal_container");
 const portfolio_close = document.getElementById("portfolio_close");
@@ -39,6 +43,14 @@ open_contact_sidebar.addEventListener("click", () => {
 })
 contact_close.addEventListener("click", () => {
     contact_modal_container.classList.remove("show");
+})
+
+/*Open and closes games */
+openGame.addEventListener("click", () => {
+    game_modal_container.classList.add("show");
+})
+game_close.addEventListener("click", () => {
+    game_modal_container.classList.remove("show");
 })
 
 /*Open and closes portfolio */

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, flash
 import smtplib
 import os
 from dotenv import find_dotenv, load_dotenv
@@ -34,33 +34,34 @@ def contact():
     user_name = os.getenv("EM_UN")
     pswd = os.getenv("EM_UP")
     form = EmailForm(request.form)
-    if request.method == "POST" and form.validate():
-        #bring in variables from our form
-        form_name = str(form['name'].data)
-        form_email = str(form['email'].data)
-        form_message = str(form['message'].data)
+    if request.method == "POST":
+        if form.validate_on_submit():
+            #bring in variables from our form
+            form_name = str(form['name'].data)
+            form_email = str(form['email'].data)
+            form_message = str(form['message'].data)
 
-        full_message = (f"Incoming email from {form_name} from email {form_email}\n"
-                        f"The email message also follows:\n"
-                        f"{form_message}")
-        print(full_message)
-        #create email message with formatting
-        msg = EmailMessage()
-        msg['Subject'] = "Website Inquiry"
-        msg['From'] = user_name
-        msg['To'] = user_name
-        msg.set_content(full_message)
+            full_message = (f"Incoming email from {form_name} from email {form_email}\n"
+                            f"The email message also follows:\n"
+                            f"{form_message}")
+            #create email message with formatting
+            msg = EmailMessage()
+            msg['Subject'] = "Website Inquiry"
+            msg['From'] = user_name
+            msg['To'] = user_name
+            msg.set_content(full_message)
 
-        output = "Confirmed receipt of your email!"
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.starttls()
-            smtp.login(user_name, pswd)
-            smtp.sendmail(msg['From'], msg['To'], msg.as_string())
-            print("Email sent")
+            output = "Confirmed receipt of your email!"
+            with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+                smtp.starttls()
+                smtp.login(user_name, pswd)
+                smtp.sendmail(msg['From'], msg['To'], msg.as_string())
 
-        return render_template('index.html', form=form)
-    else:
-        print("An error has occurred")
+            flash("Email was sent!", "success")
+            return render_template('index.html', form=form)
+        else:
+           flash("Email was not sent due to error", "error")
+           return render_template('index.html', form=form)
 
 if __name__ == '__main__':
     app.run(debug=True)
