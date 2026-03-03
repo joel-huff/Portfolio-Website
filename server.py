@@ -7,7 +7,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.fields.simple import TextAreaField
 from wtforms.validators import DataRequired, Email, Length
-from wtforms.widgets.core import TextArea
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
@@ -60,7 +60,7 @@ def contact():
 
         return render_template('index.html', form=form)
     else:
-        print(form.errors)
+        print("An error has occurred")
 
 
 

@@ -1,8 +1,10 @@
-const openAbout = document.getElementById("open_about");
+const open_about_topbar = document.getElementById("open_about_topbar");
+const open_about_sidebar = document.getElementById("open_about_sidebar");
 const about_modal_container = document.getElementById("about_modal_container");
 const about_close = document.getElementById("about_close");
 
 const openContact = document.getElementById("open_contact");
+const open_contact_sidebar = document.getElementById("open_contact_sidebar")
 const contact_modal_container = document.getElementById("contact_modal_container");
 const contact_close = document.getElementById("contact_close");
 
@@ -12,11 +14,16 @@ const portfolio_close = document.getElementById("portfolio_close");
 
 const openSidebar = document.getElementById("sidebar_button");
 const sidebar_display = document.getElementById("sidebar_menu");
+const closeSidebar = document.getElementById("close_menu");
 
 
 /*Open and closes about section*/
-openAbout.addEventListener("click", () => {
+open_about_topbar.addEventListener("click", () => {
     about_modal_container.classList.add("show");
+})
+open_about_sidebar.addEventListener("click", () => {
+    about_modal_container.classList.add("show");
+    sidebar_display.style.display = "none"
 })
 about_close.addEventListener("click", () => {
     about_modal_container.classList.remove("show");
@@ -26,11 +33,15 @@ about_close.addEventListener("click", () => {
 openContact.addEventListener("click", () => {
     contact_modal_container.classList.add("show");
 })
+open_contact_sidebar.addEventListener("click", () => {
+    contact_modal_container.classList.add("show")
+    sidebar_display.style.display = "none"
+})
 contact_close.addEventListener("click", () => {
     contact_modal_container.classList.remove("show");
 })
 
-/*Open and closes contact */
+/*Open and closes portfolio */
 openPortfolio.addEventListener("click", () => {
     portfolio_modal_container.classList.add("show");
 })
@@ -39,8 +50,9 @@ portfolio_close.addEventListener("click", () => {
 })
 
 // Opens the sidebar
-
 openSidebar.addEventListener("click", () => {
     sidebar_display.style.display = "flex"
-
+})
+closeSidebar.addEventListener("click", () => {
+    sidebar_display.style.display = "none"
 })

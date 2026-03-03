@@ -15,43 +15,62 @@
             <div class="profile">
                 <img id="sidebar_button" src="/static/images/dropdown.svg" alt="" >
                 <a class="list" href= "https://www.trueachievements.com/gamer/Bort+Sampson-555">Joel Huff</a>
-
             </div>
             <ul id="sidebar_menu">
-                <li class="list" id="open_about">about</li>
+                <li class="back-icon" id="close_menu"><img src="/static/images/back.svg" alt="">ack</li>
+                <li class="list" id="open_about_sidebar">about</li>
+                <li ><a class="list" href="https://github.com/joel-huff" target="_blank">github</a></li>
+                <li><a class="list" href="https://docs.google.com/document/d/1H7-EzyMisMpSrfLRH83Yk_TLU0CnpQsS/edit" target="_blank">resume</a></li>
+                <li class="list" id="open_contact_sidebar">contact</li>
+            </ul>
+            <ul class="top_menu">
+                <li class="list" id="open_about_topbar">about</li>
                 <li ><a class="list" href="https://github.com/joel-huff" target="_blank">github</a></li>
                 <li><a class="list" href="https://docs.google.com/document/d/1H7-EzyMisMpSrfLRH83Yk_TLU0CnpQsS/edit" target="_blank">resume</a></li>
                 <li class="list" id="open_contact">contact</li>
             </ul>
-            <ul class="top_menu">
-                <li class="list">about</li>
-                <li ><a class="list" href="https://github.com/joel-huff" target="_blank">github</a></li>
-                <li><a class="list" href="https://docs.google.com/document/d/1H7-EzyMisMpSrfLRH83Yk_TLU0CnpQsS/edit" target="_blank">resume</a></li>
-                <li class="list">contact</li>
-            </ul>
         </nav>
     </header>
+
     <main class="container">
-        <div id="divOne"><a href = "google.com">Joel's Games 🎮</a></div>
-        <div id="divtwo"><a href="filler.com">First Player Games</a></div>
-        <div id="open_portfolio">
-            <img id="web-icon" src="/static/images/web-icon.svg" alt="">
-            Portfolio Website
+        <div id="divOne" class="open_project">
+            <img class="web-icon" src="/static/images/controller.svg" alt="">
+            <p>Joel's Games</p>
         </div>
-        <div id="divFour">AI Project</div>
-        <div id="divfive">Project Five</div>
+        <div id="divtwo" class="open_project">
+            <img class="web-icon" src="/static/images/group.svg" alt="" >
+            <p>First Player Games</p>
+        </div>
+        <div id="open_portfolio" class="open_project">
+            <img class="web-icon" src="/static/images/web-icon.svg" alt="">
+            <p>Portfolio Website</p>
+        </div>
+        <div id="divFour" class="open_project">
+            <img class="web-icon" src="/static/images/robot.svg" alt="">
+            <p>AI Project</p>
+            <p>(coming soon)</p>
+        </div>
+        <div id="divfive" class="open_project">
+            <img class="web-icon" src="/static/images/data.svg" alt="">
+            <p>ML Project</p>
+            <p>(coming soon)</p>
+        </div>
     </main>
+
     <div class="modal-container" id = "about_modal_container">
         <div class="modal" id="about_display">
-
             <div class="modal_structure">
-                <img id="portfolio-img" src="../static/images/portfolio-image.png" alt="">
-                <h1>about me</h1>
-                <p>My interest in developing technology initially started with editing HTML and CSS into my MySpace page, and
-                    it expanded while in a high school robotics class where we programmed RaspberryPi Battle Bots. After a few years detour
-                    working and managing in healthcare recruiting, I realized my previous tinkering is really my passion.</p>
-                <p>January '25, I graduated with a BS in Computer Science after two years of balancing school and work.
-                    I am excited to assist a team in providing a great experience that focuses on usability, art, and innovation!</p>
+                <header>
+                    <h1>about me</h1>
+                </header>
+                <main>
+                    <img id="portfolio-img" src="../static/images/portfolio-image.png" alt="">
+                    <p>My interest in developing technology initially started with editing HTML and CSS into my MySpace page, and
+                        it expanded while in a high school robotics class where we programmed RaspberryPi Battle Bots. After a few years detour
+                        working and managing in healthcare recruiting, I realized my previous tinkering is really my passion.</p>
+                    <p>January '25, I graduated with a BS in Computer Science after a number of years balancing school and work.
+                        I am excited to assist a team in providing a great experience that focuses on usability, design, and innovation!</p>
+                </main>
 
                 <label>
                     <button class="close_btn_style" id = "about_close">B</button>
@@ -62,65 +81,59 @@
         </div>
     </div>
 
-    <div class="modal-container" id= "contact_modal_container">
+    <div class="modal-container" id = "contact_modal_container">
         <div class="modal" id="contact_display">
-
             <div class="modal_structure">
-                <div class="modal_contact">
-
-                    <div id="contact_content_left">
-                        <h2>General Inquiry</h2>
-                        <form action="/contact" method="POST">
-                            {{ form.hidden_tag() }}
-                            {{ form.name(size=25) }} <br>
-                            {{ form.email(size=25) }} <br>
-                            {{ form.message() }} <br>
-                            {{ form.submit() }}
-                        </form>
-                    </div>
-                    <div id="contact_content_right">
-                        <h2>Text or Call!</h2>
-                        <p>(510) 629-9341</p>
-                        <h2>Email!</h2>
-                        <p>joel.huff.sw@gmail.com</p>
-                        <label>
-                            <button class="close_btn_style" id = "contact_close">B</button>
-                            back
-                        </label>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-container" id = "portfolio_modal_container">
-        <div class="modal" id="portfolio_display">
-
-            <div class="modal_structure">
-                <h1>Portfolio Site</h1>
-                <h2>Front-End</h2>
-                <p>I wanted to design something that felt familiar and interactive. After a number of ideas, I landed on
-                    mimicking the Xbox 360 dashboard's tile style GUI due to its a simple way to showcase games and ads with
-                    the tiles images. The modals were inspired by the guide when pressing the Xbox button. Interactivity and
-                    design were created with HTML, CSS & JavaScript.
-                </p>
-                <h2>Technologies</h2>
-                <p>While building the website, I utilized Flask for the server and routing, Jinja to create templates for the modals,
-                WTForms, email.message & google's gmail api for email inquiry</p>
-                <a href="https://github.com/joel-huff/html_flask">github</a>
+                <header>
+                    <h1>contact me</h1>
+                </header>
+                <main>
+                    <form action="/contact" method="POST">
+                        {{ form.hidden_tag() }}
+                        {{ form.name(class="form_input") }} <br>
+                        {{ form.email(class="form_input") }} <br>
+                        {{ form.message(class="form_input", id="message_input") }} <br>
+                        {{ form.submit() }}
+                    </form>
+                </main>
                 <label>
-                    <button class="close_btn_style" id = "portfolio_close">B</button>
+                    <button class="close_btn_style" id = "contact_close">B</button>
                     back
                 </label>
             </div>
 
         </div>
     </div>
+
+    <div class="modal-container" id = "portfolio_modal_container">
+        <div class="modal" id="portfolio_display">
+            <div class="modal_structure">
+                <header>
+                    <h1>Portfolio Site</h1>
+                </header>
+                <main>
+                    <h2>Front-End</h2>
+                    <p>I wanted to design something that felt familiar and interactive. After a number of ideas, I landed on
+                        mimicking the Xbox 360 dashboard's tile style GUI due to its a simple way to showcase games and ads with
+                        the tiles images. The modals were inspired by the guide when pressing the Xbox button. Interactivity and
+                        design were created with HTML, CSS & JavaScript.
+                    </p>
+                    <h2>Technologies</h2>
+                    <p>While building the website, I utilized Flask for the server and routing, Jinja to create templates for the modals,
+                    WTForms, email.message & google's gmail api for email inquiry</p>
+                </main>
+                <div id="link-back">
+                    <a href="https://github.com/joel-huff/html_flask">github</a>
+                    <label>
+                        <button class="close_btn_style" id = "portfolio_close">B</button>
+                        back
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
     <script src="/static/script.js" charset="UTF-8"></script>
 </body>
-
-<footer>
-</footer>
 </html>
